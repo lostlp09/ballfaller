@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://3slyj50moqhv"]
+
+[ext_resource type="Texture2D" uid="uid://2vcmfunjahw2" path="res://564dcf66-2791-41d4-93f2-41e3b0f4ec59.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://clbt252kn8hij" path="res://area_2d.gd" id="2_onrkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtcfe"]
+radius = 11.6556
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 26.8263
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.17
+gravity_scale = 0.0
+linear_damp_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.175, 4.175)
+shape = SubResource("CircleShape2D_wtcfe")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, -1.19209e-07)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_4flbx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4.175, 4.175)
+shape = SubResource("CircleShape2D_onrkg")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

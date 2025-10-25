@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtcd7c2rgj8ah"
-path="res://.godot/imported/herbstblatt.webp-55c6281bbd775e0066d0f12ac789dca2.ctex"
+uid="uid://2vcmfunjahw2"
+path="res://.godot/imported/564dcf66-2791-41d4-93f2-41e3b0f4ec59.png-44c457d5c6cb89a003f887f73243dbdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://herbstblatt.webp"
-dest_files=["res://.godot/imported/herbstblatt.webp-55c6281bbd775e0066d0f12ac789dca2.ctex"]
+source_file="res://564dcf66-2791-41d4-93f2-41e3b0f4ec59.png"
+dest_files=["res://.godot/imported/564dcf66-2791-41d4-93f2-41e3b0f4ec59.png-44c457d5c6cb89a003f887f73243dbdb.ctex"]
 
 [params]
 

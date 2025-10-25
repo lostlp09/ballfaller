@@ -1,48 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://del32djahb137"]
+[gd_scene load_steps=7 format=3 uid="uid://del32djahb137"]
 
-[ext_resource type="Script" uid="uid://2mmch4osmqsq" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://3slyj50moqhv" path="res://player.tscn" id="1_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://b3m6kktk6kdus" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://dlqmmx772jpbd" path="res://whitecircle.png" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://bywlmnmbeve2u" path="res://line_2d.gd" id="5_q6r6c"]
 [ext_resource type="Script" uid="uid://2e7ko4qw1qg4" path="res://flowerspawner.gd" id="6_d21ai"]
-[ext_resource type="Texture2D" uid="uid://dtcd7c2rgj8ah" path="res://herbstblatt.webp" id="6_kdubu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wtcfe"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
-radius = 66.6665
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdubu"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_epypp")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(654, 136)
-mass = 8.377
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(4.175, 4.175)
-shape = SubResource("CircleShape2D_wtcfe")
-
-[node name="Icon" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(3.8147e-06, -1.19209e-07)
-scale = Vector2(0.48, 0.48)
-texture = ExtResource("1_wtcfe")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(264, -118)
-scale = Vector2(0.06, 0.06)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(-18.355, -2.76)
-scale = Vector2(0.414, 0.417)
-texture = ExtResource("4_0hol4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(0.00012207, -4.36557e-10)
-shape = SubResource("CircleShape2D_0hol4")
+[node name="RigidBody2D" parent="." instance=ExtResource("1_q6r6c")]
+position = Vector2(1048, 40)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(1468, -61)
+position = Vector2(1152, 40)
 texture = ExtResource("1_wtcfe")
 
 [node name="Whitecircle" type="Sprite2D" parent="."]
@@ -51,9 +23,12 @@ scale = Vector2(0.365, 0.365)
 texture = ExtResource("4_0hol4")
 
 [node name="Line2D" type="Line2D" parent="."]
+width = 5.0
 script = ExtResource("5_q6r6c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="flowerspawner" type="Node2D" parent="."]
 script = ExtResource("6_d21ai")
@@ -62,4 +37,19 @@ script = ExtResource("6_d21ai")
 position = Vector2(16, 16)
 rotation = -2.58651
 scale = Vector2(-0.049061, 0.0518279)
-texture = ExtResource("6_kdubu")
+texture = SubResource("CompressedTexture2D_kdubu")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 240.0
+offset_right = 376.0
+offset_bottom = 48.0
+text = "play"
+
+[node name="reset" type="Button" parent="."]
+offset_left = 392.0
+offset_right = 528.0
+offset_bottom = 48.0
+text = "reset"
+
+[connection signal="pressed" from="Button" to="Line2D" method="_on_button_pressed"]
+[connection signal="pressed" from="reset" to="Line2D" method="_on_reset_pressed"]

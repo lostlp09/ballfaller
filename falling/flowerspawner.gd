@@ -4,6 +4,8 @@ var script1 = load("res://herbstblatt.gd")
 
 
 
+
+
 func _ready() -> void:
 	spawner()
 
@@ -15,7 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func spawner()->void:
-
 	while true :
 		var  clone = herbstblatt.duplicate()
 		var pos = Vector2(randi_range(16,1136),16.0)   
@@ -25,4 +26,8 @@ func spawner()->void:
 		clone.set_script(script1)
 		self.get_parent().add_child(clone)
 		await get_tree().create_timer(3).timeout
+	
+
+
+
 	
