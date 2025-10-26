@@ -16,10 +16,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("mouse"):
+		self.default_color = Color.GRAY
 		Start.despawn =false
 		var distance = player.position.distance_to(get_global_mouse_position())
 		print(distance)
-		if distance <= 110:
+		if distance <= 55:
 			print("hi")
 			
 			Start.despawn = true
@@ -39,14 +40,12 @@ func _process(delta: float) -> void:
 				var col = CollisionPolygon2D.new()
 				col.polygon = poly
 				staticbody.add_child(col)
-			
-	
+			self.default_color = Color.BLACK
 		if Start.despawn ==true:
 				
 			for i in staticbody.get_children():
 				i.queue_free()
 				self.clear_points()
-			
 			self.clear_points()
 			player.queue_free()
 			await get_tree().physics_frame
@@ -55,13 +54,8 @@ func _process(delta: float) -> void:
 			self.get_parent().add_child(clone)
 			player = clone
 		get_tree().create_timer(0.1).timeout
-		
-	
-	
-		
-		
-func _on_button_pressed() -> void:
 
+func _on_button_pressed() -> void:
 	if self.points.size() != 0:
 		var line_poly = Geometry2D.offset_polyline(points,self.width/2)
 		for poly in line_poly :
@@ -77,7 +71,22 @@ func _on_reset_pressed() -> void:
 	player = clone
 	player.position = oldpos
 	self.get_parent().add_child(clone)
+	for i in staticbody.get_children():
+			i.queue_free()
+			self.clear_points()
+
+	self.clear_points()
+
+
 	
+
+
+func _on_floor_body_entered(body: Node2D) -> void:
+	player.queue_free()
+	var clone = instance.instantiate()
+	player = clone
+	player.position = oldpos
+	self.get_parent().add_child(clone)
 	for i in staticbody.get_children():
 			i.queue_free()
 			self.clear_points()
