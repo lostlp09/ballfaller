@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlqmmx772jpbd" path="res://whitecircle.png" id="2_xy4tn"]
 [ext_resource type="Script" uid="uid://bywlmnmbeve2u" path="res://line_2d.gd" id="3_usj0q"]
 [ext_resource type="Script" uid="uid://2e7ko4qw1qg4" path="res://flowerspawner.gd" id="4_5j5gb"]
+[ext_resource type="Texture2D" uid="uid://bq51dyuy64q17" path="res://pngtree-autumn-maple-leaf-element-design-leaf-elementautumn-leavesautumn-png-image_602484.png" id="5_hx44q"]
 [ext_resource type="Texture2D" uid="uid://udlp2p1nwgi4" path="res://busket.png" id="5_mx85b"]
 [ext_resource type="Script" uid="uid://brdl7v6ojberq" path="res://playbutton.gd" id="5_usj0q"]
 [ext_resource type="Texture2D" uid="uid://15yocy4eipmf" path="res://black.png" id="6_hx44q"]
@@ -11,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://oggmlutxq6fn" path="res://Start2.png" id="7_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://b01w3wjhwyba1" path="res://pause.png" id="8_xy4tn"]
 [ext_resource type="Script" uid="uid://r6kgumn0ra2w" path="res://bucket.gd" id="9_mx85b"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdubu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5j5gb"]
 
@@ -98,10 +97,10 @@ collision_mask = 3
 script = ExtResource("4_5j5gb")
 
 [node name="Herbstblatt" type="Sprite2D" parent="flowerspawner"]
-position = Vector2(16, 16)
+position = Vector2(328, 176)
 rotation = -2.58651
-scale = Vector2(-0.049061, 0.0518279)
-texture = SubResource("CompressedTexture2D_kdubu")
+scale = Vector2(0.131, -0.139)
+texture = ExtResource("5_hx44q")
 
 [node name="play" type="Button" parent="."]
 offset_left = 8.0

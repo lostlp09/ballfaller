@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlqmmx772jpbd" path="res://whitecircle.png" id="2_7lf1v"]
 [ext_resource type="Script" uid="uid://bywlmnmbeve2u" path="res://line_2d.gd" id="3_dguho"]
 [ext_resource type="Script" uid="uid://2e7ko4qw1qg4" path="res://flowerspawner.gd" id="4_p2trt"]
+[ext_resource type="Texture2D" uid="uid://bq51dyuy64q17" path="res://pngtree-autumn-maple-leaf-element-design-leaf-elementautumn-leavesautumn-png-image_602484.png" id="5_7lf1v"]
 [ext_resource type="Script" uid="uid://brdl7v6ojberq" path="res://playbutton.gd" id="5_n01hv"]
 [ext_resource type="Texture2D" uid="uid://oggmlutxq6fn" path="res://Start2.png" id="6_7odde"]
 [ext_resource type="Script" uid="uid://crnkugnp4l6bs" path="res://resetbutton.gd" id="7_0bk12"]
@@ -11,8 +12,6 @@
 [ext_resource type="Script" uid="uid://r6kgumn0ra2w" path="res://bucket.gd" id="9_0buyf"]
 [ext_resource type="Texture2D" uid="uid://udlp2p1nwgi4" path="res://busket.png" id="10_d0b6t"]
 [ext_resource type="Texture2D" uid="uid://15yocy4eipmf" path="res://black.png" id="11_x8n7k"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdubu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5j5gb"]
 
@@ -98,10 +97,10 @@ collision_mask = 3
 script = ExtResource("4_p2trt")
 
 [node name="Herbstblatt" type="Sprite2D" parent="flowerspawner"]
-position = Vector2(16, 16)
+position = Vector2(352, -192)
 rotation = -2.58651
-scale = Vector2(-0.049061, 0.0518279)
-texture = SubResource("CompressedTexture2D_kdubu")
+scale = Vector2(0.131, -0.139)
+texture = ExtResource("5_7lf1v")
 
 [node name="play" type="Button" parent="."]
 offset_left = 8.0
@@ -554,7 +553,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block10" type="StaticBody2D" parent="."]
-position = Vector2(1054, 320)
+position = Vector2(1070, 320)
 
 [node name="Black" type="Sprite2D" parent="block10"]
 scale = Vector2(0.73, 0.73)
@@ -564,7 +563,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block11" type="StaticBody2D" parent="."]
-position = Vector2(928, 320)
+position = Vector2(944, 320)
 
 [node name="Black" type="Sprite2D" parent="block11"]
 scale = Vector2(0.73, 0.73)
@@ -574,7 +573,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block12" type="StaticBody2D" parent="."]
-position = Vector2(800, 320)
+position = Vector2(816, 320)
 
 [node name="Black" type="Sprite2D" parent="block12"]
 scale = Vector2(0.73, 0.73)
@@ -584,7 +583,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block13" type="StaticBody2D" parent="."]
-position = Vector2(672, 320)
+position = Vector2(688, 320)
 
 [node name="Black" type="Sprite2D" parent="block13"]
 scale = Vector2(0.73, 0.73)
@@ -594,7 +593,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block14" type="StaticBody2D" parent="."]
-position = Vector2(672, 320)
+position = Vector2(688, 320)
 
 [node name="Black" type="Sprite2D" parent="block14"]
 scale = Vector2(0.73, 0.73)
@@ -604,7 +603,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block15" type="StaticBody2D" parent="."]
-position = Vector2(544, 320)
+position = Vector2(560, 320)
 
 [node name="Black" type="Sprite2D" parent="block15"]
 scale = Vector2(0.73, 0.73)
@@ -614,7 +613,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block16" type="StaticBody2D" parent="."]
-position = Vector2(416, 320)
+position = Vector2(432, 320)
 
 [node name="Black" type="Sprite2D" parent="block16"]
 scale = Vector2(0.73, 0.73)
@@ -624,7 +623,7 @@ texture = ExtResource("11_x8n7k")
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block17" type="StaticBody2D" parent="."]
-position = Vector2(288, 320)
+position = Vector2(304, 320)
 
 [node name="Black" type="Sprite2D" parent="block17"]
 scale = Vector2(0.73, 0.73)

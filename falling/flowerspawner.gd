@@ -25,7 +25,7 @@ func spawner()->void:
 		clone.rotation_degrees = rotation1
 		clone.set_script(script1)
 		self.get_parent().add_child(clone)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(10).timeout
 	
 
 
