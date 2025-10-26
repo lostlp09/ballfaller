@@ -30,10 +30,14 @@ func _process(delta: float) -> void:
 		self.clear_points()
 		
 	if Input.is_action_pressed("mouse") :
-		self.add_point(get_global_mouse_position())
+		var distance  = 30
+		if self.points.size() != 0:
+			distance =  get_global_mouse_position().distance_to(self.points[self.points.size()-1])
+		if distance >=20 :
+			self.add_point(to_local(get_global_mouse_position()))
 
 	if Input.is_action_just_released("mouse"):
-		if self.points.size() != 0:
+		if self.points.size() > 1:
 			var line_poly = Geometry2D.offset_polyline(points,self.width/2)
 			for poly in line_poly :
 				
@@ -48,7 +52,7 @@ func _process(delta: float) -> void:
 				self.clear_points()
 			self.clear_points()
 			player.queue_free()
-			await get_tree().physics_frame
+		
 			var clone = instance.instantiate()
 			clone.position = oldpos
 			self.get_parent().add_child(clone)
@@ -76,11 +80,6 @@ func _on_reset_pressed() -> void:
 			self.clear_points()
 
 	self.clear_points()
-
-
-	
-
-
 func _on_floor_body_entered(body: Node2D) -> void:
 	player.queue_free()
 	var clone = instance.instantiate()

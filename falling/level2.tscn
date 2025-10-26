@@ -1,16 +1,16 @@
-[gd_scene load_steps=40 format=3 uid="uid://del32djahb137"]
+[gd_scene load_steps=40 format=3 uid="uid://d3g76ovgtgp2w"]
 
-[ext_resource type="PackedScene" uid="uid://3slyj50moqhv" path="res://player.tscn" id="1_i2041"]
-[ext_resource type="Texture2D" uid="uid://dlqmmx772jpbd" path="res://whitecircle.png" id="2_xy4tn"]
-[ext_resource type="Script" uid="uid://bywlmnmbeve2u" path="res://line_2d.gd" id="3_usj0q"]
-[ext_resource type="Script" uid="uid://2e7ko4qw1qg4" path="res://flowerspawner.gd" id="4_5j5gb"]
-[ext_resource type="Texture2D" uid="uid://udlp2p1nwgi4" path="res://busket.png" id="5_mx85b"]
-[ext_resource type="Script" uid="uid://brdl7v6ojberq" path="res://playbutton.gd" id="5_usj0q"]
-[ext_resource type="Texture2D" uid="uid://15yocy4eipmf" path="res://black.png" id="6_hx44q"]
-[ext_resource type="Script" uid="uid://crnkugnp4l6bs" path="res://resetbutton.gd" id="7_5j5gb"]
-[ext_resource type="Texture2D" uid="uid://oggmlutxq6fn" path="res://Start2.png" id="7_n8vhr"]
-[ext_resource type="Texture2D" uid="uid://b01w3wjhwyba1" path="res://pause.png" id="8_xy4tn"]
-[ext_resource type="Script" uid="uid://r6kgumn0ra2w" path="res://bucket.gd" id="9_mx85b"]
+[ext_resource type="PackedScene" uid="uid://3slyj50moqhv" path="res://player.tscn" id="1_3opl0"]
+[ext_resource type="Texture2D" uid="uid://dlqmmx772jpbd" path="res://whitecircle.png" id="2_dc5vx"]
+[ext_resource type="Script" uid="uid://bywlmnmbeve2u" path="res://line_2d.gd" id="3_s8oj7"]
+[ext_resource type="Script" uid="uid://2e7ko4qw1qg4" path="res://flowerspawner.gd" id="4_mw4xc"]
+[ext_resource type="Script" uid="uid://brdl7v6ojberq" path="res://playbutton.gd" id="5_r8rrl"]
+[ext_resource type="Texture2D" uid="uid://oggmlutxq6fn" path="res://Start2.png" id="6_lwvnx"]
+[ext_resource type="Script" uid="uid://crnkugnp4l6bs" path="res://resetbutton.gd" id="7_4ou0f"]
+[ext_resource type="Texture2D" uid="uid://b01w3wjhwyba1" path="res://pause.png" id="8_4k5bj"]
+[ext_resource type="Script" uid="uid://r6kgumn0ra2w" path="res://bucket.gd" id="9_hp87d"]
+[ext_resource type="Texture2D" uid="uid://udlp2p1nwgi4" path="res://busket.png" id="10_gxpff"]
+[ext_resource type="Texture2D" uid="uid://15yocy4eipmf" path="res://black.png" id="11_2x2vu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdubu"]
 
@@ -75,27 +75,27 @@ size = Vector2(5384, 605)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D" parent="." instance=ExtResource("1_i2041")]
+[node name="RigidBody2D" parent="." instance=ExtResource("1_3opl0")]
 z_index = -40
 position = Vector2(1800, 56)
 
 [node name="Whitecircle" type="Sprite2D" parent="."]
 position = Vector2(844, -567)
 scale = Vector2(0.365, 0.365)
-texture = ExtResource("2_xy4tn")
+texture = ExtResource("2_dc5vx")
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(1, 0)
 width = 5.0
 default_color = Color(0.905623, 0.000334605, 0.830981, 1)
-script = ExtResource("3_usj0q")
+script = ExtResource("3_s8oj7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 
 [node name="flowerspawner" type="Node2D" parent="."]
-script = ExtResource("4_5j5gb")
+script = ExtResource("4_mw4xc")
 
 [node name="Herbstblatt" type="Sprite2D" parent="flowerspawner"]
 position = Vector2(16, 16)
@@ -120,12 +120,12 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1idop")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_beq0j")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_nauge")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ycv2e")
-script = ExtResource("5_usj0q")
+script = ExtResource("5_r8rrl")
 
 [node name="Start2" type="Sprite2D" parent="play"]
 position = Vector2(40, 24)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("7_n8vhr")
+texture = ExtResource("6_lwvnx")
 
 [node name="reset" type="Button" parent="."]
 offset_left = 104.0
@@ -145,23 +145,23 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_pieet")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qiqrj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xm42n")
 flat = true
-script = ExtResource("7_5j5gb")
+script = ExtResource("7_4ou0f")
 
 [node name="Pause" type="Sprite2D" parent="reset"]
 position = Vector2(66.988, 24.089)
 scale = Vector2(0.18, 0.05)
-texture = ExtResource("8_xy4tn")
+texture = ExtResource("8_4k5bj")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="bucket" type="StaticBody2D" parent="."]
 z_index = 800
-position = Vector2(256, 856)
-script = ExtResource("9_mx85b")
+position = Vector2(216, 904)
+script = ExtResource("9_hp87d")
 
 [node name="Busket" type="Sprite2D" parent="bucket"]
 scale = Vector2(0.225, 0.225)
-texture = ExtResource("5_mx85b")
+texture = ExtResource("10_gxpff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bucket"]
 position = Vector2(80, 46)
@@ -183,182 +183,12 @@ shape = SubResource("RectangleShape2D_rj586")
 position = Vector2(-1.5, 30)
 shape = SubResource("RectangleShape2D_kdubu")
 
-[node name="block5" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -312)
-
-[node name="Black" type="Sprite2D" parent="bucket/block5"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block5"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block6" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -184)
-
-[node name="Black" type="Sprite2D" parent="bucket/block6"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block6"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block7" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -56)
-
-[node name="Black" type="Sprite2D" parent="bucket/block7"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block7"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block8" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, 72)
-
-[node name="Black" type="Sprite2D" parent="bucket/block8"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block8"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block9" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, 200)
-
-[node name="Black" type="Sprite2D" parent="bucket/block9"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block9"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block10" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -616)
-
-[node name="Black" type="Sprite2D" parent="bucket/block10"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block10"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block11" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -744)
-
-[node name="Black" type="Sprite2D" parent="bucket/block11"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block11"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block12" type="StaticBody2D" parent="bucket"]
-position = Vector2(704, -869)
-
-[node name="Black" type="Sprite2D" parent="bucket/block12"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block12"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block13" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -640)
-
-[node name="Black" type="Sprite2D" parent="bucket/block13"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block13"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block14" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -768)
-
-[node name="Black" type="Sprite2D" parent="bucket/block14"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block14"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block15" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -896)
-
-[node name="Black" type="Sprite2D" parent="bucket/block15"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block15"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block16" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -368)
-
-[node name="Black" type="Sprite2D" parent="bucket/block16"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block16"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block17" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -248)
-
-[node name="Black" type="Sprite2D" parent="bucket/block17"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block17"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block18" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -136)
-
-[node name="Black" type="Sprite2D" parent="bucket/block18"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block18"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block19" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, -8)
-
-[node name="Black" type="Sprite2D" parent="bucket/block19"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block19"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block20" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, 120)
-
-[node name="Black" type="Sprite2D" parent="bucket/block20"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block20"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="block21" type="StaticBody2D" parent="bucket"]
-position = Vector2(960, 264)
-
-[node name="Black" type="Sprite2D" parent="bucket/block21"]
-scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket/block21"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
 [node name="block3" type="StaticBody2D" parent="."]
 position = Vector2(640, 512)
 
 [node name="Black" type="Sprite2D" parent="block3"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block3"]
 shape = SubResource("RectangleShape2D_4d7sh")
@@ -368,7 +198,7 @@ position = Vector2(640, 640)
 
 [node name="Black" type="Sprite2D" parent="block6"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block6"]
 shape = SubResource("RectangleShape2D_4d7sh")
@@ -378,7 +208,7 @@ position = Vector2(640, 768)
 
 [node name="Black" type="Sprite2D" parent="block7"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block7"]
 shape = SubResource("RectangleShape2D_4d7sh")
@@ -388,7 +218,7 @@ position = Vector2(640, 896)
 
 [node name="Black" type="Sprite2D" parent="block8"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block8"]
 shape = SubResource("RectangleShape2D_4d7sh")
@@ -398,12 +228,9 @@ position = Vector2(640, 1024)
 
 [node name="Black" type="Sprite2D" parent="block9"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block9"]
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="block9"]
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="block4" type="StaticBody2D" parent="."]
@@ -411,7 +238,7 @@ position = Vector2(640, 192)
 
 [node name="Black" type="Sprite2D" parent="block4"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block4"]
 shape = SubResource("RectangleShape2D_4d7sh")
@@ -421,7 +248,7 @@ position = Vector2(640, 64)
 
 [node name="Black" type="Sprite2D" parent="block5"]
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("6_hx44q")
+texture = ExtResource("11_2x2vu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block5"]
 shape = SubResource("RectangleShape2D_4d7sh")
