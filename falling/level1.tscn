@@ -97,7 +97,7 @@ collision_mask = 3
 script = ExtResource("4_5j5gb")
 
 [node name="Herbstblatt" type="Sprite2D" parent="flowerspawner"]
-position = Vector2(328, 176)
+position = Vector2(312, -376)
 rotation = -2.58651
 scale = Vector2(0.131, -0.139)
 texture = ExtResource("5_hx44q")
